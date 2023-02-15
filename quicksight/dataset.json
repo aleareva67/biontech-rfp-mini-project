@@ -1,0 +1,473 @@
+{
+
+    "DataSetId": "biontech-demo-covid19-dset",
+    "Name": "biontech_demo_dashboard_dataset",
+    "ImportMode": "SPICE",
+    "PhysicalTableMap": {
+        "4bfd58e2-6c18-393b-83f6-3a481cf24271": {
+            "RelationalTable": {
+                "DataSourceArn": "__datasource_arn__",
+                "Catalog": "AwsDataCatalog",
+                "InputColumns": [{
+                        "Type": "BOOLEAN",
+                        "Name": "on_same_continent"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "continent"
+                    }, {
+                        "Type": "BOOLEAN",
+                        "Name": "is_in_off_continent_top_5_predictors"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "predictor_location"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "predictor_rank"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "predictor_continent"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "location"
+                    }, {
+                        "Type": "BOOLEAN",
+                        "Name": "is_in_same_continent_top_5_predictors"
+                    }
+                ],
+                "Name": "analysis_location_variant_predictors",
+                "Schema": "biontechetldemocovid19"
+            }
+        },
+        "b814caab-e99b-3a24-9ec8-82bf4fe8a3c0": {
+            "RelationalTable": {
+                "DataSourceArn": "__datasource_arn__",
+                "Catalog": "AwsDataCatalog",
+                "InputColumns": [{
+                        "Type": "STRING",
+                        "Name": "continent"
+                    }, {
+                        "Type": "BOOLEAN",
+                        "Name": "earliest_5_in_continent"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "location"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "schulze_onset_rank_continent"
+                    }
+                ],
+                "Name": "analysis_location_outbreak_rank",
+                "Schema": "biontechetldemocovid19"
+            }
+        },
+        "897c472d-e778-3d14-8e57-26c54adb2f67": {
+            "RelationalTable": {
+                "DataSourceArn": "__datasource_arn__",
+                "Catalog": "AwsDataCatalog",
+                "InputColumns": [{
+                        "Type": "DATETIME",
+                        "Name": "date"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "people_vaccinated_per_hundred"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "population_density"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "aged_70_older"
+                    }, {
+                        "Type": "DATETIME",
+                        "Name": "date_indicators"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "total_vaccinations"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "excess_mortality_cumulative_absolute"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "variant"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "diabetes_prevalence"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "total_vaccinations_per_hundred"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "excess_mortality"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "positive_rate"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "perc_sequences"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "gdp_per_capita"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "median_age"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "new_vaccinations_smoothed_per_million"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "new_people_vaccinated_smoothed"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "total_deaths_per_million"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "new_tests_smoothed_per_thousand"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "total_boosters"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "male_smokers"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "population"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "new_tests"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "tests_per_case"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "total_tests_per_thousand"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "new_vaccinations_smoothed"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "continent"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "life_expectancy"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "new_deaths_per_million"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "new_vaccinations"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "aged_65_older"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "cardiovasc_death_rate"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "new_deaths_smoothed_per_million"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "hosp_patients_per_million"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "extreme_poverty"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "new_tests_per_thousand"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "new_people_vaccinated_smoothed_per_hundred"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "human_development_index"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "female_smokers"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "handwashing_facilities"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "tests_units"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "hospital_beds_per_thousand"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "people_vaccinated"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "excess_mortality_cumulative"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "people_fully_vaccinated_per_hundred"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "hosp_patients"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "num_sequences"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "stringency_index"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "new_tests_smoothed"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "people_fully_vaccinated"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "reproduction_rate"
+                    }, {
+                        "Type": "DECIMAL",
+                        "Name": "excess_mortality_cumulative_per_million"
+                    }, {
+                        "Type": "STRING",
+                        "Name": "location"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "num_sequences_total"
+                    }, {
+                        "Type": "INTEGER",
+                        "Name": "total_tests"
+                    }
+                ],
+                "Name": "curated_country_variant_indicators",
+                "Schema": "biontechetldemocovid19"
+            }
+        }
+    },
+    "FieldFolders": {},
+    "LogicalTableMap": {
+        "3f90cb3e-0a3f-3f99-a954-a9803896a62e": {
+            "Source": {
+                "JoinInstruction": {
+                    "RightOperand": "c7e3823c-73ca-44c7-b2e2-bd558797d52b",
+                    "OnClause": "{location} = {location[curated_country_variant_indicators]} AND {continent} = {continent[curated_country_variant_indicators]}",
+                    "Type": "LEFT",
+                    "LeftOperand": "ee3bd29a-2551-3139-9630-ba6d2cbb5ba1"
+                }
+            },
+            "Alias": "Intermediate Table (2)",
+            "DataTransforms": [{
+                    "ProjectOperation": {
+                        "ProjectedColumns": [
+                            "location",
+                            "schulze_onset_rank_continent",
+                            "earliest_5_in_continent",
+                            "continent",
+                            "predictor_location",
+                            "predictor_rank",
+                            "predictor_continent",
+                            "on_same_continent",
+                            "is_in_same_continent_top_5_predictors",
+                            "is_in_off_continent_top_5_predictors",
+                            "location[analysis_location_variant_predictors]",
+                            "continent[analysis_location_variant_predictors]",
+                            "location[curated_country_variant_indicators]",
+                            "date",
+                            "variant",
+                            "num_sequences",
+                            "perc_sequences",
+                            "num_sequences_total",
+                            "date_indicators",
+                            "total_deaths_per_million",
+                            "new_deaths_per_million",
+                            "new_deaths_smoothed_per_million",
+                            "reproduction_rate",
+                            "hosp_patients",
+                            "hosp_patients_per_million",
+                            "total_tests",
+                            "new_tests",
+                            "total_tests_per_thousand",
+                            "new_tests_per_thousand",
+                            "new_tests_smoothed",
+                            "new_tests_smoothed_per_thousand",
+                            "positive_rate",
+                            "tests_per_case",
+                            "tests_units",
+                            "total_vaccinations",
+                            "people_vaccinated",
+                            "people_fully_vaccinated",
+                            "total_boosters",
+                            "new_vaccinations",
+                            "new_vaccinations_smoothed",
+                            "total_vaccinations_per_hundred",
+                            "people_vaccinated_per_hundred",
+                            "people_fully_vaccinated_per_hundred",
+                            "new_vaccinations_smoothed_per_million",
+                            "new_people_vaccinated_smoothed",
+                            "new_people_vaccinated_smoothed_per_hundred",
+                            "stringency_index",
+                            "population_density",
+                            "median_age",
+                            "aged_65_older",
+                            "aged_70_older",
+                            "gdp_per_capita",
+                            "extreme_poverty",
+                            "cardiovasc_death_rate",
+                            "diabetes_prevalence",
+                            "female_smokers",
+                            "male_smokers",
+                            "handwashing_facilities",
+                            "hospital_beds_per_thousand",
+                            "life_expectancy",
+                            "human_development_index",
+                            "population",
+                            "excess_mortality_cumulative_absolute",
+                            "excess_mortality_cumulative",
+                            "excess_mortality",
+                            "excess_mortality_cumulative_per_million",
+                            "continent[curated_country_variant_indicators]"
+                        ]
+                    }
+                }, {
+                    "TagColumnOperation": {
+                        "ColumnName": "location",
+                        "Tags": [{
+                                "ColumnGeographicRole": "COUNTRY"
+                            }
+                        ]
+                    }
+                }, {
+                    "TagColumnOperation": {
+                        "ColumnName": "predictor_location",
+                        "Tags": [{
+                                "ColumnGeographicRole": "COUNTRY"
+                            }
+                        ]
+                    }
+                }, {
+                    "TagColumnOperation": {
+                        "ColumnName": "location[analysis_location_variant_predictors]",
+                        "Tags": [{
+                                "ColumnGeographicRole": "COUNTRY"
+                            }
+                        ]
+                    }
+                }, {
+                    "TagColumnOperation": {
+                        "ColumnName": "location[curated_country_variant_indicators]",
+                        "Tags": [{
+                                "ColumnGeographicRole": "COUNTY"
+                            }
+                        ]
+                    }
+                }, {
+                    "TagColumnOperation": {
+                        "ColumnName": "continent[curated_country_variant_indicators]",
+                        "Tags": [{
+                                "ColumnGeographicRole": "COUNTRY"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "defafaaf-4d1b-4360-bb14-8312c8b781dd": {
+            "Source": {
+                "PhysicalTableId": "b814caab-e99b-3a24-9ec8-82bf4fe8a3c0"
+            },
+            "Alias": "analysis_location_outbreak_rank",
+            "DataTransforms": [{
+                    "CastColumnTypeOperation": {
+                        "ColumnName": "schulze_onset_rank_continent",
+                        "NewColumnType": "INTEGER"
+                    }
+                }, {
+                    "CastColumnTypeOperation": {
+                        "ColumnName": "earliest_5_in_continent",
+                        "NewColumnType": "INTEGER"
+                    }
+                }
+            ]
+        },
+        "ee3bd29a-2551-3139-9630-ba6d2cbb5ba1": {
+            "Alias": "Intermediate Table",
+            "Source": {
+                "JoinInstruction": {
+                    "RightOperand": "714d8f23-223e-42bd-a7c3-003127d670a5",
+                    "OnClause": "{location} = {location[analysis_location_variant_predictors]} AND {continent} = {continent[analysis_location_variant_predictors]}",
+                    "Type": "LEFT",
+                    "LeftOperand": "defafaaf-4d1b-4360-bb14-8312c8b781dd"
+                }
+            }
+        },
+        "c7e3823c-73ca-44c7-b2e2-bd558797d52b": {
+            "Source": {
+                "PhysicalTableId": "897c472d-e778-3d14-8e57-26c54adb2f67"
+            },
+            "Alias": "curated_country_variant_indicators",
+            "DataTransforms": [{
+                    "RenameColumnOperation": {
+                        "NewColumnName": "continent[curated_country_variant_indicators]",
+                        "ColumnName": "continent"
+                    }
+                }, {
+                    "RenameColumnOperation": {
+                        "NewColumnName": "location[curated_country_variant_indicators]",
+                        "ColumnName": "location"
+                    }
+                }
+            ]
+        },
+        "714d8f23-223e-42bd-a7c3-003127d670a5": {
+            "Source": {
+                "PhysicalTableId": "4bfd58e2-6c18-393b-83f6-3a481cf24271"
+            },
+            "Alias": "analysis_location_variant_predictors",
+            "DataTransforms": [{
+                    "RenameColumnOperation": {
+                        "NewColumnName": "continent[analysis_location_variant_predictors]",
+                        "ColumnName": "continent"
+                    }
+                }, {
+                    "RenameColumnOperation": {
+                        "NewColumnName": "location[analysis_location_variant_predictors]",
+                        "ColumnName": "location"
+                    }
+                }, {
+                    "CastColumnTypeOperation": {
+                        "ColumnName": "predictor_rank",
+                        "NewColumnType": "INTEGER"
+                    }
+                }, {
+                    "CastColumnTypeOperation": {
+                        "ColumnName": "on_same_continent",
+                        "NewColumnType": "INTEGER"
+                    }
+                }, {
+                    "CastColumnTypeOperation": {
+                        "ColumnName": "is_in_same_continent_top_5_predictors",
+                        "NewColumnType": "INTEGER"
+                    }
+                }, {
+                    "CastColumnTypeOperation": {
+                        "ColumnName": "is_in_off_continent_top_5_predictors",
+                        "NewColumnType": "INTEGER"
+                    }
+                }
+            ]
+        }
+    },
+    "Permissions": [{
+            "Principal": "__user_arn__",
+            "Actions": [
+                "quicksight:UpdateDataSetPermissions",
+                "quicksight:DescribeDataSet",
+                "quicksight:DescribeDataSetPermissions",
+                "quicksight:PassDataSet",
+                "quicksight:DescribeIngestion",
+                "quicksight:ListIngestions",
+                "quicksight:UpdateDataSet",
+                "quicksight:DeleteDataSet",
+                "quicksight:CreateIngestion",
+                "quicksight:CancelIngestion"
+            ]
+        }
+    ],
+    "Tags": [{
+            "Key": "app",
+            "Value": "biontech-etl-demo"
+        }
+    ]
+}

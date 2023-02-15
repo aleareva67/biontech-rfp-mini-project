@@ -1,0 +1,30 @@
+{
+    "DataSourceId": "biontech-demo-covid19-ds",
+    "Name": "biontech-demo-covid19-ds",
+    "Type": "ATHENA",
+    "SslProperties": {
+        "DisableSsl": false
+    },
+    "DataSourceParameters": {
+        "AthenaParameters": {
+            "WorkGroup": "primary"
+        }
+    },
+    "Permissions": [{
+            "Principal": "__user_arn__",
+            "Actions": [
+                "quicksight:UpdateDataSourcePermissions",
+                "quicksight:DescribeDataSource",
+                "quicksight:DescribeDataSourcePermissions",
+                "quicksight:PassDataSource",
+                "quicksight:UpdateDataSource",
+                "quicksight:DeleteDataSource"
+            ]
+        }
+    ],
+    "Tags": [{
+            "Key": "app",
+            "Value": "biontech-etl-demo"
+        }
+    ]
+}

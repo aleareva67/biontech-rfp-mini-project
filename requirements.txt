@@ -1,0 +1,12 @@
+boto3==1.26.67
+aws-cdk.core==1.192.0
+aws-cdk.aws-lambda==1.192.0
+aws-cdk.aws-lambda-python==1.192.0
+aws-cdk.aws-lambda-event-sources==1.192.0
+aws-cdk.aws-events==1.192.0
+aws-cdk.aws-s3==1.192.0
+aws-cdk.aws_s3_deployment==1.192.0
+aws-cdk.aws-glue==1.192.0
+aws-cdk.aws_iam==1.192.0
+aws-cdk.aws-ec2==1.192.0
+aws-cdk.aws_stepfunctions_tasks==1.192.0

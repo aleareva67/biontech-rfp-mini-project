@@ -1,0 +1,98 @@
+{
+  "ThemeId": "biontech-demo-covid19-thm",
+  "Name": "biontech-demo-covid19-thm",
+  "BaseThemeId": "CLASSIC",
+  "Configuration": {
+            "DataColorPalette": {
+                "Colors": [
+                    "#9FDEF1",
+                    "#005A64",
+                    "#F6AA54",
+                    "#B9E52F",
+                    "#E436BB",
+                    "#6197E2",
+                    "#863CFF",
+                    "#30CB71",
+                    "#ED90C7",
+                    "#DE3B00",
+                    "#25F1AA",
+                    "#C2C4E3",
+                    "#33AEB1",
+                    "#8B5011",
+                    "#A8577B"
+                ],
+                "MinMaxGradient": [
+                    "#FFDD11",
+                    "#E54238"
+                ],
+                "EmptyFillColor": "#EB14E4"
+            },
+            "UIColorPalette": {
+                "PrimaryForeground": "#00393C",
+                "PrimaryBackground": "#FFFFFF",
+                "SecondaryForeground": "#00393C",
+                "SecondaryBackground": "#F6F6F6",
+                "Accent": "#024E9C",
+                "AccentForeground": "#FFFFFF",
+                "Danger": "#EA5077",
+                "DangerForeground": "#FFFFFF",
+                "Warning": "#FF9900",
+                "WarningForeground": "#FFFFFF",
+                "Success": "#2CAD00",
+                "SuccessForeground": "#FFFFFF",
+                "Dimension": "#219FD7",
+                "DimensionForeground": "#FFFFFF",
+                "Measure": "#2CAD00",
+                "MeasureForeground": "#FFFFFF"
+            },
+            "Sheet": {
+                "Tile": {
+                    "Border": {
+                        "Show": true
+                    }
+                },
+                "TileLayout": {
+                    "Gutter": {
+                        "Show": true
+                    },
+                    "Margin": {
+                        "Show": true
+                    }
+                }
+            },
+            "Typography": {
+                "FontFamilies": [{
+                        "FontFamily": "Amazon Ember"
+                    }, {
+                        "FontFamily": "sans-serif"
+                    }
+                ]
+            }
+        },
+    "Permissions": [{
+            "Principal": "__user_arn__",
+            "Actions": [
+                "quicksight:DescribeTheme",
+                "quicksight:ListThemeVersions",
+                "quicksight:DescribeThemeAlias",
+                "quicksight:ListThemeAliases",
+                "quicksight:ListThemeVersions",
+                "quicksight:UpdateThemeAlias",
+                "quicksight:DescribeThemeAlias",
+                "quicksight:UpdateThemePermissions",
+                "quicksight:DeleteThemeAlias",
+                "quicksight:DeleteTheme",
+                "quicksight:ListThemeAliases",
+                "quicksight:DescribeTheme",
+                "quicksight:CreateThemeAlias",
+                "quicksight:UpdateTheme",
+                "quicksight:DescribeThemePermissions"
+            ]
+        }
+    ],
+    "Tags": [{
+            "Key": "app",
+            "Value": "biontech-etl-demo"
+        }
+    ]
+}
