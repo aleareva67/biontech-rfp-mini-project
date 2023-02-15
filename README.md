@@ -15,7 +15,8 @@ This is a short guide on how to deploy and test the "BioNTech RFP Practical mini
 ## Usage
     
 1. Execute the build of the docker image with:
-    `docker build -t biontech-mini-project .` 
+   - Additionally the image is publicly available as [capoctemp/biontech-mini-project:latest](https://hub.docker.com/layers/capoctemp/biontech-mini-project/latest/images/sha256-67825a1c434e050f1146fc6108cd6fb021709636b5269fc7612cea1cdda7f451?tab=layers)
+       `docker build -t biontech-mini-project .` 
 2. Start the image specifying as environment variables the  credentials of a valid AWS user present in the TARGET account.
    - Note that since the Python CDK uses the PythonFunction, it is needed to execute the image in privilage mode
        ```
