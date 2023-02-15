@@ -1,0 +1,2577 @@
+{
+    "DashboardId": "biontech-demo-covid19-dashboard",
+    "Name": "biontech-demo-covid19-dashboard",
+    "ThemeArn": "__theme_arn__",
+    "Definition": {
+        "DataSetIdentifierDeclarations": [
+            {
+                "Identifier": "location_outbreak_01",
+                "DataSetArn": "__dataset_arn__"
+            }
+        ],
+        "Sheets": [
+            {
+                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                "Name": "Sheet 1",
+                "ParameterControls": [
+                    {
+                        "Dropdown": {
+                            "ParameterControlId": "127df0ae-7a22-40ec-a997-8658255001db",
+                            "Title": "Select a country",
+                            "SourceParameterName": "Country",
+                            "DisplayOptions": {
+                                "SelectAllOptions": {
+                                    "Visibility": "HIDDEN"
+                                },
+                                "TitleOptions": {
+                                    "Visibility": "HIDDEN",
+                                    "FontConfiguration": {
+                                        "FontSize": {
+                                            "Relative": "MEDIUM"
+                                        }
+                                    }
+                                }
+                            },
+                            "Type": "SINGLE_SELECT",
+                            "SelectableValues": {
+                                "LinkToDataSetColumn": {
+                                    "DataSetIdentifier": "location_outbreak_01",
+                                    "ColumnName": "location"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "Dropdown": {
+                            "ParameterControlId": "ed6bd848-cccd-4ff2-abf0-1531ba801949",
+                            "Title": "Select Variant",
+                            "SourceParameterName": "Variant",
+                            "DisplayOptions": {
+                                "SelectAllOptions": {
+                                    "Visibility": "HIDDEN"
+                                },
+                                "TitleOptions": {
+                                    "Visibility": "HIDDEN",
+                                    "FontConfiguration": {
+                                        "FontSize": {
+                                            "Relative": "MEDIUM"
+                                        }
+                                    }
+                                }
+                            },
+                            "Type": "SINGLE_SELECT",
+                            "SelectableValues": {
+                                "LinkToDataSetColumn": {
+                                    "DataSetIdentifier": "location_outbreak_01",
+                                    "ColumnName": "variant"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "FilterControls": [
+                    {
+                        "List": {
+                            "FilterControlId": "9828c114-7b8e-4b98-9d10-0c720d6c6906",
+                            "Title": "Select Variants",
+                            "SourceFilterId": "3f930109-5b7d-4b0e-8c37-eb4a739c0ba9",
+                            "DisplayOptions": {
+                                "SearchOptions": {
+                                    "Visibility": "HIDDEN"
+                                },
+                                "SelectAllOptions": {
+                                    "Visibility": "VISIBLE"
+                                },
+                                "TitleOptions": {
+                                    "Visibility": "VISIBLE",
+                                    "FontConfiguration": {
+                                        "FontSize": {
+                                            "Relative": "LARGE"
+                                        }
+                                    }
+                                }
+                            },
+                            "Type": "MULTI_SELECT"
+                        }
+                    },
+                    {
+                        "List": {
+                            "FilterControlId": "b79a4d27-7bf9-4643-a9ae-099b89501b6e",
+                            "Title": "Select countries",
+                            "SourceFilterId": "3f9fe123-b6dc-4718-aea5-f4a18993a43d",
+                            "DisplayOptions": {
+                                "SearchOptions": {
+                                    "Visibility": "VISIBLE"
+                                },
+                                "SelectAllOptions": {
+                                    "Visibility": "VISIBLE"
+                                },
+                                "TitleOptions": {
+                                    "Visibility": "VISIBLE",
+                                    "FontConfiguration": {
+                                        "FontSize": {
+                                            "Relative": "LARGE"
+                                        }
+                                    }
+                                }
+                            },
+                            "Type": "MULTI_SELECT"
+                        }
+                    }
+                ],
+                "Visuals": [
+                    {
+                        "LineChartVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_bfaca5cc-267f-461e-8c5a-ce1e2bc305da",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Prevalence of variant \"</b>\n  </inline>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>\n      <parameter>${Variant}</parameter>\n    </b>\n  </inline>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>\" over time</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "LineChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "date"
+                                                    },
+                                                    "HierarchyId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476"
+                                                }
+                                            }
+                                        ],
+                                        "Values": [
+                                            {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.perc_sequences.1.1676353515643",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "perc_sequences"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MAX"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Colors": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.2.1676408237518",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategorySort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ],
+                                    "CategoryItemsLimitConfiguration": {
+                                        "ItemsLimit": 400,
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "ColorItemsLimitConfiguration": {
+                                        "ItemsLimit": 25,
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "SmallMultiplesLimitConfiguration": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "Type": "LINE",
+                                "XAxisDisplayOptions": {
+                                    "TickLabelOptions": {
+                                        "LabelOptions": {
+                                            "FontConfiguration": {
+                                                "FontSize": {
+                                                    "Relative": "MEDIUM"
+                                                }
+                                            }
+                                        },
+                                        "RotationAngle": 45.0
+                                    },
+                                    "AxisLineVisibility": "VISIBLE",
+                                    "ScrollbarOptions": {
+                                        "Visibility": "HIDDEN"
+                                    }
+                                },
+                                "XAxisLabelOptions": {
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "Date",
+                                            "ApplyTo": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "date"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "PrimaryYAxisDisplayOptions": {
+                                    "AxisOptions": {
+                                        "TickLabelOptions": {
+                                            "LabelOptions": {
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        "DataOptions": {
+                                            "NumericAxisOptions": {
+                                                "Scale": {
+                                                    "Linear": {
+                                                        "StepSize": 20.0
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "MissingDataConfigurations": [
+                                        {
+                                            "TreatmentOption": "SHOW_AS_BLANK"
+                                        }
+                                    ]
+                                },
+                                "PrimaryYAxisLabelOptions": {
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "Prevalence (in %) ",
+                                            "ApplyTo": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.perc_sequences.1.1676353515643",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "perc_sequences"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "Legend": {
+                                    "Visibility": "VISIBLE",
+                                    "Title": {
+                                        "Visibility": "HIDDEN"
+                                    },
+                                    "Position": "TOP",
+                                    "Height": "39px"
+                                },
+                                "DataLabels": {
+                                    "Visibility": "HIDDEN",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                    "Label": "Date",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.perc_sequences.1.1676353515643",
+                                                    "Label": "Prevalence (in %)",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.2.1676408237518",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_d039647a-f55c-4561-a6bf-3274b8c8a6e6",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>On same continent</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "HIDDEN"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_fecd63f2-48f3-4395-a157-461b81f1b680",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "b78eaa57-babd-432c-a5ed-26120dface9c.predictor_location.0.1676264688107",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "predictor_location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "714d8f23-223e-42bd-a7c3-003127d670a5.predictor_rank.2.1676411377662",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "predictor_rank"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    },
+                                    {
+                                        "UniqueValues": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_997ac5fc-baec-4133-93ad-1170b3342e10",
+                                            "Name": "unique_predictors",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "b78eaa57-babd-432c-a5ed-26120dface9c.predictor_location.0.1676264688107",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "predictor_location"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "UniqueValues": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_6101f036-3d1f-48c6-88b1-e38fd28507c1",
+                                            "Name": "unique_locations",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.2.1676267257561",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <if condition=\"{unique_locations}.uniqueGroupValuesCount &lt;&gt; 1\" level=\"inline\">\n    <b>On the map, click on a country in the \"Hit earliest\" category</b>\n  </if>\n   \n  <br/>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <if condition=\"{unique_locations}.uniqueGroupValuesCount = 1\" level=\"inline\">\n       \n      <expression>Bottom.items[index].metricValue.formattedValue</expression>\n       \n      <inline color=\"#000000\">\n        <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n      </inline>\n    </if>\n      \n  </for>\n  <br/>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_59d6d717-b922-4934-82f9-34b6f54bbfe4",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Asia</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_bde28a84-18e8-4ae8-9658-c1b82f40323c",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676269360610",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "defafaaf-4d1b-4360-bb14-8312c8b781dd.schulze_onset_rank_continent.1.1676411501783",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].metricValue.formattedValue</expression>\n    </inline>\n     \n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n    </inline>\n  </for>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_66ed88b5-17ad-4ae9-a4f1-9226162a1a72",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Oceania</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_09aa26f8-3512-4559-8a0a-eadc8848b251",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676269360610",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "defafaaf-4d1b-4360-bb14-8312c8b781dd.schulze_onset_rank_continent.1.1676411526822",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].metricValue.formattedValue</expression>\n    </inline>\n     \n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n    </inline>\n  </for>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_33dd62a4-bf01-4829-9698-40e56e37b451",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Europe</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_13b927cb-bd19-447f-bcf3-382e8069ae19",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676269360610",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "defafaaf-4d1b-4360-bb14-8312c8b781dd.schulze_onset_rank_continent.1.1676411470482",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].metricValue.formattedValue</expression>\n    </inline>\n     \n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n    </inline>\n  </for>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_22ad90ff-d7f2-4d40-919e-8dfa415d5c4b",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Africa</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_69ca6759-c8be-4e91-ad15-4ecf924bfd45",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676269360610",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "defafaaf-4d1b-4360-bb14-8312c8b781dd.schulze_onset_rank_continent.1.1676411515445",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].metricValue.formattedValue</expression>\n    </inline>\n     \n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n    </inline>\n  </for>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_a135f75e-0cba-42ec-8df7-2189dc5d8189",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>South America</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_3826475f-cdc7-4752-aa17-de124a34211b",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676269360610",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "defafaaf-4d1b-4360-bb14-8312c8b781dd.schulze_onset_rank_continent.1.1676411437031",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].metricValue.formattedValue</expression>\n    </inline>\n     \n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n    </inline>\n  </for>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_8da5f4bc-b8cb-4b9a-b9ac-0eecf3ab8432",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Off-continent</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "HIDDEN"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_10a1a6d7-a9fa-4cc1-9a80-d9aee6ccf1af",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "b78eaa57-babd-432c-a5ed-26120dface9c.predictor_location.0.1676264688107",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "predictor_location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "714d8f23-223e-42bd-a7c3-003127d670a5.predictor_rank.2.1676411365653",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "predictor_rank"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    },
+                                    {
+                                        "UniqueValues": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_79d9eb4b-58e3-40c2-9d02-eb0ae6ffa3fa",
+                                            "Name": "unique_predictors",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "b78eaa57-babd-432c-a5ed-26120dface9c.predictor_location.0.1676264688107",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "predictor_location"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "UniqueValues": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_7676ff5f-9274-4f06-9e8d-9f72e4c137a6",
+                                            "Name": "unique_locations",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.2.1676267257561",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <if condition=\"{unique_locations}.uniqueGroupValuesCount &lt;&gt; 1\" level=\"inline\">\n    <b>On the map, click on a country in the \"Hit earliest\" category</b>\n  </if>\n  <br/>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <if condition=\"{unique_locations}.uniqueGroupValuesCount = 1\" level=\"inline\">\n       \n      <inline color=\"#000000\">\n        <expression>Bottom.items[index].metricValue.formattedValue</expression>\n      </inline>\n       \n      <inline color=\"#000000\">\n        <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n      </inline>\n    </if>\n  </for>\n  <br/>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "FilledMapVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_8ff657db-52ed-4802-b3b6-bd82f60cda74",
+                            "Title": {
+                                "Visibility": "HIDDEN",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#181010\" font-size=\"20px\">\n    <b>World Covid-19 Outbreak (Click on the map)</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "FilledMapAggregatedFieldWells": {
+                                        "Geospatial": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676264251753",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Values": [
+                                            {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.earliest_5_in_continent.1.1676264256728",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "earliest_5_in_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SortConfiguration": {},
+                                "Legend": {
+                                    "Visibility": "HIDDEN",
+                                    "Title": {
+                                        "Visibility": "HIDDEN"
+                                    }
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "ColumnTooltipItem": {
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "Label": "Rank on Continent",
+                                                    "Visibility": "VISIBLE",
+                                                    "Aggregation": {
+                                                        "NumericalAggregationFunction": {
+                                                            "SimpleNumericalAggregation": "MIN"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676264251753",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.earliest_5_in_continent.1.1676264256728",
+                                                    "Visibility": "HIDDEN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "WindowOptions": {
+                                    "Bounds": {
+                                        "North": 69.74688238048725,
+                                        "South": -19.50117339329978,
+                                        "West": -84.46922644591686,
+                                        "East": 155.80459641552875
+                                    },
+                                    "MapZoomMode": "MANUAL"
+                                },
+                                "MapStyleOptions": {
+                                    "BaseMapStyle": "LIGHT_GRAY"
+                                }
+                            },
+                            "ColumnHierarchies": [],
+                            "Actions": [
+                                {
+                                    "CustomActionId": "92a7c31a-4882-407e-8908-4f3ca8c2f739",
+                                    "Name": "Filter",
+                                    "Status": "ENABLED",
+                                    "Trigger": "DATA_POINT_CLICK",
+                                    "ActionOperations": [
+                                        {
+                                            "FilterOperation": {
+                                                "SelectedFieldsConfiguration": {
+                                                    "SelectedFields": [
+                                                        "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676264251753"
+                                                    ]
+                                                },
+                                                "TargetVisualsConfiguration": {
+                                                    "SameSheetTargetVisualConfiguration": {
+                                                        "TargetVisuals": [
+                                                            "8eb425ae-b086-4e55-a250-610538886752_8da5f4bc-b8cb-4b9a-b9ac-0eecf3ab8432",
+                                                            "8eb425ae-b086-4e55-a250-610538886752_d039647a-f55c-4561-a6bf-3274b8c8a6e6"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "InsightVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_d133f7ea-a562-430a-99da-695fa8c24a0f",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>North America</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "InsightConfiguration": {
+                                "Computations": [
+                                    {
+                                        "TopBottomRanked": {
+                                            "ComputationId": "8eb425ae-b086-4e55-a250-610538886752_32e08c13-688a-4e29-b66b-1599d40c87c3",
+                                            "Name": "Bottom",
+                                            "Category": {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "8bcd3b1c-ddf8-4f45-879c-8533a477b3cc.location.0.1676269360610",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "location"
+                                                    }
+                                                }
+                                            },
+                                            "Value": {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "defafaaf-4d1b-4360-bb14-8312c8b781dd.schulze_onset_rank_continent.1.1676411428982",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "schulze_onset_rank_continent"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MIN"
+                                                    }
+                                                }
+                                            },
+                                            "ResultSize": 5,
+                                            "Type": "BOTTOM"
+                                        }
+                                    }
+                                ],
+                                "CustomNarrative": {
+                                    "Narrative": "<narrative>\n  <for level=\"block\" listExpression=\"Bottom.items\">\n    <expression>Bottom.items[index].metricValue.formattedValue</expression>\n     \n    <inline color=\"#000000\">\n      <expression>Bottom.items[index].categoryValue.formattedValue</expression>\n    </inline>\n  </for>\n</narrative>"
+                                }
+                            },
+                            "Actions": [],
+                            "DataSetIdentifier": "location_outbreak_01"
+                        }
+                    },
+                    {
+                        "LineChartVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_bfa041a4-302d-4a60-b246-971c3722b9e7",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Prevalence in </b>\n  </inline>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>\n      <parameter>${Country}</parameter>\n    </b>\n  </inline>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b> for each variant over time</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "LineChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "date"
+                                                    },
+                                                    "HierarchyId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476"
+                                                }
+                                            }
+                                        ],
+                                        "Values": [
+                                            {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.perc_sequences.1.1676353515643",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "perc_sequences"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MAX"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Colors": [
+                                            {
+                                                "CategoricalDimensionField": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.variant.2.1676353520224",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "variant"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategorySort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ],
+                                    "CategoryItemsLimitConfiguration": {
+                                        "ItemsLimit": 400,
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "ColorItemsLimitConfiguration": {
+                                        "ItemsLimit": 25,
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "SmallMultiplesLimitConfiguration": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "Type": "LINE",
+                                "XAxisDisplayOptions": {
+                                    "TickLabelOptions": {
+                                        "LabelOptions": {
+                                            "FontConfiguration": {
+                                                "FontSize": {
+                                                    "Relative": "MEDIUM"
+                                                }
+                                            }
+                                        },
+                                        "RotationAngle": 45.0
+                                    },
+                                    "AxisLineVisibility": "VISIBLE",
+                                    "ScrollbarOptions": {
+                                        "Visibility": "HIDDEN",
+                                        "VisibleRange": {
+                                            "PercentRange": {
+                                                "From": 0.0,
+                                                "To": 100.0
+                                            }
+                                        }
+                                    }
+                                },
+                                "XAxisLabelOptions": {
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "Date",
+                                            "ApplyTo": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "date"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "PrimaryYAxisDisplayOptions": {
+                                    "AxisOptions": {
+                                        "TickLabelOptions": {
+                                            "LabelOptions": {
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        "DataOptions": {
+                                            "NumericAxisOptions": {
+                                                "Scale": {
+                                                    "Linear": {
+                                                        "StepSize": 20.0
+                                                    }
+                                                },
+                                                "Range": {
+                                                    "MinMax": {
+                                                        "Minimum": 0.0,
+                                                        "Maximum": 100.0
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "MissingDataConfigurations": [
+                                        {
+                                            "TreatmentOption": "SHOW_AS_BLANK"
+                                        }
+                                    ]
+                                },
+                                "PrimaryYAxisLabelOptions": {
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "Prevalence (in %) ",
+                                            "ApplyTo": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.perc_sequences.1.1676353515643",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "perc_sequences"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "Legend": {
+                                    "Visibility": "VISIBLE",
+                                    "Title": {
+                                        "Visibility": "HIDDEN"
+                                    },
+                                    "Position": "TOP",
+                                    "Height": "39px"
+                                },
+                                "DataLabels": {
+                                    "Visibility": "HIDDEN",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476",
+                                                    "Label": "Date",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.variant.2.1676353520224",
+                                                    "Label": "Variant",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.perc_sequences.1.1676353515643",
+                                                    "Label": "Prevalence (in %)",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "VisualPalette": {}
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676353498476"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "LineChartVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_d22aae48-2bf4-4c92-8768-48a7c44ee555",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>Total number of sequences in </b>\n  </inline>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b>\n      <parameter>${Country}</parameter>\n    </b>\n  </inline>\n  <inline color=\"#3c9673\" font-size=\"16px\">\n    <b> per 1 million inhabitants over time</b>\n  </inline>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "LineChartAggregatedFieldWells": {
+                                        "Category": [
+                                            {
+                                                "DateDimensionField": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676354454570",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "date"
+                                                    },
+                                                    "HierarchyId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676354454570"
+                                                }
+                                            }
+                                        ],
+                                        "Values": [
+                                            {
+                                                "NumericalMeasureField": {
+                                                    "FieldId": "c6415397-6939-435f-8dc8-3db03a12cc11.1.1676354553354",
+                                                    "Column": {
+                                                        "DataSetIdentifier": "location_outbreak_01",
+                                                        "ColumnName": "num_sequences_total_per_million"
+                                                    },
+                                                    "AggregationFunction": {
+                                                        "SimpleNumericalAggregation": "MAX"
+                                                    },
+                                                    "FormatConfiguration": {
+                                                        "FormatConfiguration": {
+                                                            "NumberDisplayFormatConfiguration": {
+                                                                "SeparatorConfiguration": {
+                                                                    "DecimalSeparator": "COMMA",
+                                                                    "ThousandsSeparator": {
+                                                                        "Symbol": "DOT"
+                                                                    }
+                                                                },
+                                                                "DecimalPlacesConfiguration": {
+                                                                    "DecimalPlaces": 0
+                                                                },
+                                                                "NumberScale": "NONE"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "Colors": []
+                                    }
+                                },
+                                "SortConfiguration": {
+                                    "CategorySort": [
+                                        {
+                                            "FieldSort": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676354454570",
+                                                "Direction": "DESC"
+                                            }
+                                        }
+                                    ],
+                                    "CategoryItemsLimitConfiguration": {
+                                        "ItemsLimit": 400,
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "ColorItemsLimitConfiguration": {
+                                        "ItemsLimit": 25,
+                                        "OtherCategories": "INCLUDE"
+                                    },
+                                    "SmallMultiplesLimitConfiguration": {
+                                        "OtherCategories": "INCLUDE"
+                                    }
+                                },
+                                "Type": "LINE",
+                                "XAxisDisplayOptions": {
+                                    "TickLabelOptions": {
+                                        "RotationAngle": 45.0
+                                    },
+                                    "ScrollbarOptions": {
+                                        "Visibility": "HIDDEN"
+                                    }
+                                },
+                                "XAxisLabelOptions": {
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "Date",
+                                            "ApplyTo": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676354454570",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "date"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "PrimaryYAxisLabelOptions": {
+                                    "AxisLabelOptions": [
+                                        {
+                                            "CustomLabel": "total number of sequences (per 1 M inhab)",
+                                            "ApplyTo": {
+                                                "FieldId": "c6415397-6939-435f-8dc8-3db03a12cc11.1.1676354553354",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "num_sequences_total_per_million"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "DataLabels": {
+                                    "Visibility": "HIDDEN",
+                                    "Overlap": "DISABLE_OVERLAP"
+                                },
+                                "Tooltip": {
+                                    "TooltipVisibility": "VISIBLE",
+                                    "SelectedTooltipType": "DETAILED",
+                                    "FieldBasedTooltip": {
+                                        "AggregationVisibility": "HIDDEN",
+                                        "TooltipTitleType": "PRIMARY_VALUE",
+                                        "TooltipFields": [
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676354454570",
+                                                    "Label": "Date",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            },
+                                            {
+                                                "FieldTooltipItem": {
+                                                    "FieldId": "c6415397-6939-435f-8dc8-3db03a12cc11.1.1676354553354",
+                                                    "Label": "# sequences",
+                                                    "Visibility": "VISIBLE"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "VisualPalette": {
+                                    "ChartColor": "#777777"
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": [
+                                {
+                                    "DateTimeHierarchy": {
+                                        "HierarchyId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.date.0.1676354454570"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "KPIVisual": {
+                            "VisualId": "8eb425ae-b086-4e55-a250-610538886752_5a020eda-eaef-4515-912e-7272cf074792",
+                            "Title": {
+                                "Visibility": "VISIBLE",
+                                "FormatText": {
+                                    "RichText": "<visual-title>\n  <block align=\"center\">\n    <inline color=\"#3c9673\" font-size=\"16px\">\n      <b>Total population</b>\n    </inline>\n  </block>\n  <br/>\n  <block align=\"center\">\n    <inline color=\"#3c9673\" font-size=\"16px\">\n      <b>\n        <parameter>${Country}</parameter>\n      </b>\n    </inline>\n  </block>\n</visual-title>"
+                                }
+                            },
+                            "Subtitle": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "ChartConfiguration": {
+                                "FieldWells": {
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "2ac5a11e-d4dc-46a7-803b-b3eb868046ae.population.0.1676358194198",
+                                                "Column": {
+                                                    "DataSetIdentifier": "location_outbreak_01",
+                                                    "ColumnName": "population"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                },
+                                                "FormatConfiguration": {
+                                                    "FormatConfiguration": {
+                                                        "NumberDisplayFormatConfiguration": {
+                                                            "DecimalPlacesConfiguration": {
+                                                                "DecimalPlaces": 1
+                                                            },
+                                                            "NumberScale": "MILLIONS"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "TargetValues": [],
+                                    "TrendGroups": []
+                                },
+                                "SortConfiguration": {},
+                                "KPIOptions": {
+                                    "PrimaryValueFontConfiguration": {
+                                        "FontSize": {
+                                            "Relative": "MEDIUM"
+                                        }
+                                    }
+                                }
+                            },
+                            "Actions": [],
+                            "ColumnHierarchies": []
+                        }
+                    }
+                ],
+                "TextBoxes": [
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_61330229-488d-4bc9-bf2b-04fa9efdc257",
+                        "Content": "<text-box>\n  <inline color=\"#181010\" font-size=\"20px\">\n    <b>Prevalence of Covid-19 variants over time</b>\n  </inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_1365d15e-437b-4f2b-b973-f6c562248f4a",
+                        "Content": "<text-box>\n       \n  <br/>\n  <inline color=\"#e5e5e5\">    .</inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_3acb13b1-ba9c-4c6e-aeb6-5af6f391b71e",
+                        "Content": "<text-box>\n  <inline font-size=\"20px\">\n    <b>     </b>\n  </inline>\n  <br/>\n  <inline font-size=\"16px\">\n    <b>              </b>\n  </inline>\n  <inline font-size=\"16px\">\n    <b>\n      <img src=\"https://upload.wikimedia.org/wikipedia/commons/f/fe/BioNTech_logo.svg\" width=\"202\"/>\n    </b>\n  </inline>\n  <inline font-size=\"16px\">\n    <b> </b>\n  </inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_ec02d28a-0e6a-4436-8678-02daa7093b37",
+                        "Content": "<text-box>.</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_d922cada-3644-47f5-bac6-6450ae046299",
+                        "Content": "<text-box>\n  <inline color=\"#ffdd11\">.</inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_cd307d03-d421-4f02-a896-cf64ae41d3e0",
+                        "Content": "<text-box>\n  <inline color=\"#d72121\">.</inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_4da75672-3aeb-45de-bdaa-1223c00df813",
+                        "Content": "<text-box>\n  <inline color=\"#000000\" font-size=\"12px\">\n    <b>Hit Later</b>\n  </inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_69098501-3bda-4bcd-b1dd-f4a832181f31",
+                        "Content": "<text-box>\n  <inline color=\"#000000\" font-size=\"12px\">\n    <b>Hit Earliest</b>\n  </inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_717e72b4-b146-44f0-90da-bd7c27f6d317",
+                        "Content": "<text-box>\n  <inline color=\"#000000\" font-size=\"12px\">\n    <b>No data</b>\n  </inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_2c026ab2-d6d8-497b-ae48-5344279e9ec8",
+                        "Content": "<text-box>\n  <inline color=\"#181010\" font-size=\"20px\">\n    <b>Countries on each continent hit earliest by new variants of Covid-19 (ordered by Schulze rank)</b>\n  </inline>\n</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_ac8d6b97-b025-4b23-ba96-924716b48878",
+                        "Content": "<text-box>hh</text-box>"
+                    },
+                    {
+                        "SheetTextBoxId": "8eb425ae-b086-4e55-a250-610538886752_1b6e3676-acc1-4b22-a206-a7a1f22d2696",
+                        "Content": "<text-box>\n  <block align=\"center\">\n    <inline color=\"#000000\" font-size=\"20px\">\n      <b>Top predictors </b>\n    </inline>\n  </block>\n  <br/>\n  <block align=\"center\">\n    <inline color=\"#000000\" font-size=\"16px\">\n      <b>(ordered by Schulze rank)</b>\n    </inline>\n  </block>\n</text-box>"
+                    }
+                ],
+                "Layouts": [
+                    {
+                        "Configuration": {
+                            "FreeFormLayout": {
+                                "Elements": [
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_ac8d6b97-b025-4b23-ba96-924716b48878",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "208px",
+                                        "YAxisLocation": "960px",
+                                        "Width": "1360px",
+                                        "Height": "1120px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_8ff657db-52ed-4802-b3b6-bd82f60cda74",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "208px",
+                                        "YAxisLocation": "336px",
+                                        "Width": "1104px",
+                                        "Height": "560px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "VISIBLE"
+                                        },
+                                        "LoadingAnimation": {
+                                            "Visibility": "VISIBLE"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_1365d15e-437b-4f2b-b973-f6c562248f4a",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "208px",
+                                        "YAxisLocation": "720px",
+                                        "Width": "160px",
+                                        "Height": "128px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#000000FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FFFFFF99"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_8da5f4bc-b8cb-4b9a-b9ac-0eecf3ab8432",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "1328px",
+                                        "YAxisLocation": "672px",
+                                        "Width": "240px",
+                                        "Height": "224px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Color": "#BBBBBBFF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_d133f7ea-a562-430a-99da-695fa8c24a0f",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "208px",
+                                        "YAxisLocation": "160px",
+                                        "Width": "224px",
+                                        "Height": "160px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FF7C7CFF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#3C96731C"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_a135f75e-0cba-42ec-8df7-2189dc5d8189",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "432px",
+                                        "YAxisLocation": "160px",
+                                        "Width": "224px",
+                                        "Height": "160px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FF7C7CCC"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_22ad90ff-d7f2-4d40-919e-8dfa415d5c4b",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "1104px",
+                                        "YAxisLocation": "160px",
+                                        "Width": "224px",
+                                        "Height": "160px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FF7C7CCC"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_33dd62a4-bf01-4829-9698-40e56e37b451",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "656px",
+                                        "YAxisLocation": "160px",
+                                        "Width": "224px",
+                                        "Height": "160px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FF7C7CCC"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_66ed88b5-17ad-4ae9-a4f1-9226162a1a72",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "1328px",
+                                        "YAxisLocation": "160px",
+                                        "Width": "240px",
+                                        "Height": "160px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FF7C7CCC"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_59d6d717-b922-4934-82f9-34b6f54bbfe4",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "880px",
+                                        "YAxisLocation": "160px",
+                                        "Width": "224px",
+                                        "Height": "160px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FF7C7CCC"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_d039647a-f55c-4561-a6bf-3274b8c8a6e6",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "1328px",
+                                        "YAxisLocation": "432px",
+                                        "Width": "240px",
+                                        "Height": "224px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Color": "#BBBBBBFF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#7F7F7FFF"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Color": "#2E816C1A"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_69098501-3bda-4bcd-b1dd-f4a832181f31",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "272px",
+                                        "YAxisLocation": "736px",
+                                        "Width": "112px",
+                                        "Height": "32px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#000000FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#005A64FF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_717e72b4-b146-44f0-90da-bd7c27f6d317",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "272px",
+                                        "YAxisLocation": "800px",
+                                        "Width": "90px",
+                                        "Height": "32px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#E5E5E5FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#E5E5E5FF"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#FFFFFFFF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_4da75672-3aeb-45de-bdaa-1223c00df813",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "272px",
+                                        "YAxisLocation": "768px",
+                                        "Width": "96px",
+                                        "Height": "32px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#000000FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#17E2BDFF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_cd307d03-d421-4f02-a896-cf64ae41d3e0",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "224px",
+                                        "YAxisLocation": "736px",
+                                        "Width": "48px",
+                                        "Height": "32px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#000000FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#E54238FF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_d922cada-3644-47f5-bac6-6450ae046299",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "224px",
+                                        "YAxisLocation": "768px",
+                                        "Width": "48px",
+                                        "Height": "32px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#000000FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FFDD11FF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_ec02d28a-0e6a-4436-8678-02daa7093b37",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "224px",
+                                        "YAxisLocation": "800px",
+                                        "Width": "48px",
+                                        "Height": "32px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Color": "#E5E5E5FF"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Color": "#E5E5E5FF"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "VISIBLE",
+                                            "Color": "#FFFFFFFF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_2c026ab2-d6d8-497b-ae48-5344279e9ec8",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "208px",
+                                        "YAxisLocation": "112px",
+                                        "Width": "1216px",
+                                        "Height": "48px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#FFFFFFFF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_3acb13b1-ba9c-4c6e-aeb6-5af6f391b71e",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "0px",
+                                        "YAxisLocation": "0px",
+                                        "Width": "1920px",
+                                        "Height": "80px",
+                                        "Visibility": "VISIBLE",
+                                        "BackgroundStyle": {
+                                            "Color": "#005A64FF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_bfa041a4-302d-4a60-b246-971c3722b9e7",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "240px",
+                                        "YAxisLocation": "976px",
+                                        "Width": "1088px",
+                                        "Height": "432px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "9828c114-7b8e-4b98-9d10-0c720d6c6906",
+                                        "ElementType": "FILTER_CONTROL",
+                                        "XAxisLocation": "1328px",
+                                        "YAxisLocation": "976px",
+                                        "Width": "224px",
+                                        "Height": "384px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_d22aae48-2bf4-4c92-8768-48a7c44ee555",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "240px",
+                                        "YAxisLocation": "1424px",
+                                        "Width": "1088px",
+                                        "Height": "400px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "127df0ae-7a22-40ec-a997-8658255001db",
+                                        "ElementType": "PARAMETER_CONTROL",
+                                        "XAxisLocation": "1104px",
+                                        "YAxisLocation": "980px",
+                                        "Width": "224px",
+                                        "Height": "64px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_5a020eda-eaef-4515-912e-7272cf074792",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "1344px",
+                                        "YAxisLocation": "1472px",
+                                        "Width": "192px",
+                                        "Height": "192px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_61330229-488d-4bc9-bf2b-04fa9efdc257",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "208px",
+                                        "YAxisLocation": "912px",
+                                        "Width": "1216px",
+                                        "Height": "48px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN",
+                                            "Color": "#FFFFFFFF"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_bfaca5cc-267f-461e-8c5a-ce1e2bc305da",
+                                        "ElementType": "VISUAL",
+                                        "XAxisLocation": "240px",
+                                        "YAxisLocation": "1824px",
+                                        "Width": "1072px",
+                                        "Height": "496px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "ed6bd848-cccd-4ff2-abf0-1531ba801949",
+                                        "ElementType": "PARAMETER_CONTROL",
+                                        "XAxisLocation": "1104px",
+                                        "YAxisLocation": "1832px",
+                                        "Width": "224px",
+                                        "Height": "64px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "b79a4d27-7bf9-4643-a9ae-099b89501b6e",
+                                        "ElementType": "FILTER_CONTROL",
+                                        "XAxisLocation": "1328px",
+                                        "YAxisLocation": "1824px",
+                                        "Width": "208px",
+                                        "Height": "480px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    },
+                                    {
+                                        "ElementId": "8eb425ae-b086-4e55-a250-610538886752_1b6e3676-acc1-4b22-a206-a7a1f22d2696",
+                                        "ElementType": "TEXT_BOX",
+                                        "XAxisLocation": "1312px",
+                                        "YAxisLocation": "352px",
+                                        "Width": "256px",
+                                        "Height": "80px",
+                                        "Visibility": "VISIBLE",
+                                        "BorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "SelectedBorderStyle": {
+                                            "Visibility": "HIDDEN"
+                                        },
+                                        "BackgroundStyle": {
+                                            "Visibility": "HIDDEN"
+                                        }
+                                    }
+                                ],
+                                "CanvasSizeOptions": {
+                                    "ScreenCanvasSizeOptions": {
+                                        "OptimizedViewPortWidth": "1920px"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ContentType": "INTERACTIVE"
+            }
+        ],
+        "CalculatedFields": [
+            {
+                "DataSetIdentifier": "location_outbreak_01",
+                "Name": "num_sequences_total_per_million",
+                "Expression": "{num_sequences_total}/population*1000000"
+            },
+            {
+                "DataSetIdentifier": "location_outbreak_01",
+                "Name": "positive_rate_times_new_tests",
+                "Expression": "{positive_rate}*{new_tests}"
+            }
+        ],
+        "ParameterDeclarations": [
+            {
+                "StringParameterDeclaration": {
+                    "ParameterValueType": "SINGLE_VALUED",
+                    "Name": "Country",
+                    "DefaultValues": {
+                        "StaticValues": [
+                            "United Kingdom"
+                        ]
+                    },
+                    "ValueWhenUnset": {
+                        "ValueWhenUnsetOption": "RECOMMENDED_VALUE"
+                    }
+                }
+            },
+            {
+                "StringParameterDeclaration": {
+                    "ParameterValueType": "SINGLE_VALUED",
+                    "Name": "Variant",
+                    "DefaultValues": {
+                        "StaticValues": [
+                            "Alpha"
+                        ]
+                    },
+                    "ValueWhenUnset": {
+                        "ValueWhenUnsetOption": "RECOMMENDED_VALUE"
+                    }
+                }
+            }
+        ],
+        "FilterGroups": [
+            {
+                "FilterGroupId": "f75a60c8-16eb-4828-a600-b0f6af1959eb",
+                "Filters": [
+                    {
+                        "NumericEqualityFilter": {
+                            "FilterId": "61d48d90-ca27-4412-a51b-c01d3484bd38",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "is_in_off_continent_top_5_predictors"
+                            },
+                            "Value": 1.0,
+                            "MatchOperator": "EQUALS",
+                            "NullOption": "NON_NULLS_ONLY"
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_8da5f4bc-b8cb-4b9a-b9ac-0eecf3ab8432"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "85b46c0e-c88f-4005-93c6-b27f37b3e6b1",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "82746ff9-7912-481c-950e-798b8e7f24c0",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "continent"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "North America"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_d133f7ea-a562-430a-99da-695fa8c24a0f"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "588551f9-c625-4ade-ade9-4f4bd258e7bb",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "f2d25f2e-56cc-4319-93e3-92c499fa4867",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "continent"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "South America"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_a135f75e-0cba-42ec-8df7-2189dc5d8189"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "dff86c5b-8e93-4a43-9c1b-0f60dbed07d0",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "aedc0c87-78b4-4957-853a-66b832ef262d",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "continent"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "Africa"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_22ad90ff-d7f2-4d40-919e-8dfa415d5c4b"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "b0e8c17f-731c-4676-acf9-299bee1b252c",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "c98684e1-e317-46ae-81b2-ce337b15e241",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "continent"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "Europe"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_33dd62a4-bf01-4829-9698-40e56e37b451"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "6b61c618-8539-4830-b391-d279ec23730e",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "e925c17b-fa35-4422-b8c8-41552774734a",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "continent"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "Oceania"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_66ed88b5-17ad-4ae9-a4f1-9226162a1a72"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "98c5f21c-30a9-4b4b-8f7f-0e9b4a211d4b",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "00e05492-1ba8-4b9d-9174-d7a3e7fc1183",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "continent"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "Asia"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_59d6d717-b922-4934-82f9-34b6f54bbfe4"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "6b265f73-3023-4aed-93f7-ecea1c55666d",
+                "Filters": [
+                    {
+                        "NumericEqualityFilter": {
+                            "FilterId": "4dcf39c2-4531-4617-a135-6f69a89a0bd4",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "is_in_same_continent_top_5_predictors"
+                            },
+                            "Value": 1.0,
+                            "MatchOperator": "EQUALS",
+                            "AggregationFunction": {
+                                "NumericalAggregationFunction": {
+                                    "SimpleNumericalAggregation": "MIN"
+                                }
+                            },
+                            "NullOption": "NON_NULLS_ONLY"
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_d039647a-f55c-4561-a6bf-3274b8c8a6e6"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "4715b67f-e352-4ebc-b662-58048c14a36a",
+                "Filters": [
+                    {
+                        "NumericEqualityFilter": {
+                            "FilterId": "69010636-08c1-43c7-b32b-e38feb7f558d",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "on_same_continent"
+                            },
+                            "Value": 1.0,
+                            "MatchOperator": "EQUALS",
+                            "NullOption": "NON_NULLS_ONLY"
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_d039647a-f55c-4561-a6bf-3274b8c8a6e6"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "21ef3eda-2c04-48c3-84fd-9bce9a96a205",
+                "Filters": [
+                    {
+                        "NumericEqualityFilter": {
+                            "FilterId": "5b2455f8-8920-4348-82ee-fb65346873a8",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "on_same_continent"
+                            },
+                            "Value": 0.0,
+                            "MatchOperator": "EQUALS",
+                            "NullOption": "NON_NULLS_ONLY"
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_8da5f4bc-b8cb-4b9a-b9ac-0eecf3ab8432"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "5cadb5ce-4dd3-4b6b-a91d-b23c4fb1d4ee",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "3f930109-5b7d-4b0e-8c37-eb4a739c0ba9",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "variant"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "others",
+                                        "Omicron",
+                                        "Delta",
+                                        "Alpha",
+                                        "B.1.177"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_bfa041a4-302d-4a60-b246-971c3722b9e7"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "de68ae33-c113-438b-a7b2-bd72996b30a6",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "54737474-5667-4e90-a4bd-e7d3eac93f30",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "location"
+                            },
+                            "Configuration": {
+                                "CustomFilterConfiguration": {
+                                    "MatchOperator": "EQUALS",
+                                    "ParameterName": "Country",
+                                    "NullOption": "NON_NULLS_ONLY"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_bfa041a4-302d-4a60-b246-971c3722b9e7",
+                                    "8eb425ae-b086-4e55-a250-610538886752_d22aae48-2bf4-4c92-8768-48a7c44ee555",
+                                    "8eb425ae-b086-4e55-a250-610538886752_5a020eda-eaef-4515-912e-7272cf074792"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "bd04d151-3729-4f06-b483-59e96c9c682d",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "96a490c5-3f39-45c2-a7c9-a0f34d8c27fd",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "variant"
+                            },
+                            "Configuration": {
+                                "CustomFilterConfiguration": {
+                                    "MatchOperator": "EQUALS",
+                                    "ParameterName": "Variant",
+                                    "NullOption": "NON_NULLS_ONLY"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_bfaca5cc-267f-461e-8c5a-ce1e2bc305da"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            },
+            {
+                "FilterGroupId": "86c004d1-f38e-4277-b03b-0eb52b1888bb",
+                "Filters": [
+                    {
+                        "CategoryFilter": {
+                            "FilterId": "3f9fe123-b6dc-4718-aea5-f4a18993a43d",
+                            "Column": {
+                                "DataSetIdentifier": "location_outbreak_01",
+                                "ColumnName": "location"
+                            },
+                            "Configuration": {
+                                "FilterListConfiguration": {
+                                    "MatchOperator": "CONTAINS",
+                                    "CategoryValues": [
+                                        "United Kingdom",
+                                        "United States",
+                                        "Canada"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "ScopeConfiguration": {
+                    "SelectedSheets": {
+                        "SheetVisualScopingConfigurations": [
+                            {
+                                "SheetId": "8eb425ae-b086-4e55-a250-610538886752_f84a10f5-26fe-47d0-b987-22b61a021cd4",
+                                "Scope": "SELECTED_VISUALS",
+                                "VisualIds": [
+                                    "8eb425ae-b086-4e55-a250-610538886752_bfaca5cc-267f-461e-8c5a-ce1e2bc305da"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "Status": "ENABLED",
+                "CrossDataset": "SINGLE_DATASET"
+            }
+        ],
+        "AnalysisDefaults": {
+            "DefaultNewSheetConfiguration": {
+                "InteractiveLayoutConfiguration": {
+                    "Grid": {
+                        "CanvasSizeOptions": {
+                            "ScreenCanvasSizeOptions": {
+                                "ResizeOption": "FIXED",
+                                "OptimizedViewPortWidth": "1600px"
+                            }
+                        }
+                    }
+                },
+                "SheetContentType": "INTERACTIVE"
+            }
+        }
+    },
+    "DashboardPublishOptions": {
+        "AdHocFilteringOption": {
+            "AvailabilityStatus": "DISABLED"
+        },
+        "ExportToCSVOption": {
+            "AvailabilityStatus": "DISABLED"
+        },
+        "SheetControlsOption": {
+            "VisibilityState": "COLLAPSED"
+        },
+        "SheetLayoutElementMaximizationOption": {
+            "AvailabilityStatus": "ENABLED"
+        },
+        "VisualMenuOption": {
+            "AvailabilityStatus": "DISABLED"
+        },
+        "VisualAxisSortOption": {
+            "AvailabilityStatus": "DISABLED"
+        },
+        "ExportWithHiddenFieldsOption": {
+            "AvailabilityStatus": "DISABLED"
+        },
+        "DataPointDrillUpDownOption": {
+            "AvailabilityStatus": "DISABLED"
+        },
+        "DataPointMenuLabelOption": {
+            "AvailabilityStatus": "ENABLED"
+        },
+        "DataPointTooltipOption": {
+            "AvailabilityStatus": "ENABLED"
+        }
+    },
+    "Permissions": [{
+            "Principal": "__user_arn__",
+            "Actions": [
+                "quicksight:DescribeDashboard",
+                "quicksight:QueryDashboard",
+                "quicksight:ListDashboardVersions",
+                "quicksight:DescribeDashboard",
+                "quicksight:ListDashboardVersions",
+                "quicksight:UpdateDashboardPermissions",
+                "quicksight:QueryDashboard",
+                "quicksight:UpdateDashboard",
+                "quicksight:DeleteDashboard",
+                "quicksight:UpdateDashboardPublishedVersion",
+                "quicksight:DescribeDashboardPermissions"
+            ]
+        }
+    ],
+    "Tags": [{
+            "Key": "app",
+            "Value": "biontech-etl-demo"
+        }
+    ]
+}
