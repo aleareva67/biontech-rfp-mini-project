@@ -8,3 +8,4 @@ pyarrow
 geopandas
 pycountry
 pandera
+scipy
