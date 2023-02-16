@@ -1,0 +1,11 @@
+boto3
+pandas
+jupyterlab
+python-dotenv
+matplotlib
+openpyxl
+pyarrow
+geopandas
+pycountry
+pandera
+scipy
